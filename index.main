@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelate Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Upload a File to Pixelate</h1>
+    </header>
+
+    <main>
+        <div class="custom-selects">
+            <label for="pixelsCount">Choose Pixels-Per-Line to Pixelate: (Default=10)</label>
+            <select id="pixelsCount" name="pixelsCount">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+        
+        <div class="custom-selects">
+            <label for="pixelatingMethod">Choose Method of Pixelation:</label>
+            <select id="pixelatingMethod" name="pixelatingMethod">
+                <!-- option value="none" selected disabled hidden>Please select an option</option --> 
+                <option value="0">stonewash_pixels_3</option>
+                <option value="1" selected>stonewash_pixels_2</option>
+                <option value="2">stonewash_pixels</option>
+                <option value="3">change_pixel_values_by_range</option>
+                <option value="4">complement_pixel_values</option>
+                <option value="5">black_white_pixel_values</option>
+                <option value="6">randomize_pixel_color</option>
+                <option value="7">white_all_pixels</option>
+                <option value="8">black_all_pixels</option>
+            </select>
+        </div>
+        
+         <div class="custom-selects">
+            <label for="pixelatingArea">Apply Pixelation over:</label>
+            <select id="pixelatingArea" name="pixelatingArea">
+                <option value="0" selected>All Image Area</option>
+                <option value="1">Middle image area only</option>
+            </select>
+        </div>
+        
+        <div class="custom-selects">
+            <label for="fileInput">Choose a File to Pixelate:</label>
+            <input type="file" id="fileInput" accept="image/*" onchange="handleFile()">
+        </div>
+        
+        <div id="resultPlaceholder"></div>
+    </main>
+
+    <script src="pixelate.js"></script>
+</body>
+</html>
